@@ -28,8 +28,11 @@ const schema = new graphql.GraphQLSchema({
 // parse POST body as text
 app.use(bodyParser.text({ type: 'application/graphql' }));
 app.get('/api', (req, res) => {
-  debug(req.body);
-    // execute GraphQL!
+    debug(req.body);
+    // Idee: Gleiche Route für einzelne GET's per REST und GraphQL.
+    // z.B. /api/users -> REST liefert alle Users mit allen Feldern
+    // /api/users mit GraphQL Query -> GraphQL liefert auf Query basierende Informationen
+
     graphql.graphql(schema, req.body)
     .then((result) => {
         res.send(JSON.stringify(result, null, 2));
