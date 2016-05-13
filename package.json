@@ -1,0 +1,20 @@
+{
+  "name": "graphql-test",
+  "version": "0.1.0",
+  "description": "...",
+  "author": "5Minds IT-Solutions GmbH & Co KG",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=4.3.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "debug": "^2.2.0",
+    "express": "^4.13.4",
+    "graphql": "^0.6.0"
+  },
+  "devDependencies": {
+  }
+}
