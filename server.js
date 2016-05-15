@@ -62,8 +62,12 @@ app.get('/api/users/:userId([0-9]{3,8})', (req, res) => {
   res.send(`GET /api/users/:userId -> with ${req.params.userId}`);
 });
 
+app.get('/api/users', (req, res) => {
+  req.send('GET /api/users');
+});
+
 // TODO: mm - check with postman: http://localhost:3000/api/users?query={user(id:"1"){name}} 
-app.get('/api/users', graphqlHTTP({schema: schema, pretty: true}));
+app.get('/api/users/search', graphqlHTTP({schema: schema, pretty: true}));
 
 app.post('/api/users', (req, res) => {
   res.send('POST /api/users');
